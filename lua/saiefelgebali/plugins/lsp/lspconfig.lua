@@ -84,6 +84,18 @@ return {
                     capabilities = capabilities,
                 })
             end,
+            ["rust_analyzer"] = function()
+                lspconfig["rust_analyzer"].setup({
+                    procMacro = {
+                        ignored = {
+                            leptos_macro = {
+                                "component",
+                                "server",
+                            },
+                        },
+                    },
+                })
+            end,
             ["svelte"] = function()
                 -- configure svelte server
                 lspconfig["svelte"].setup({

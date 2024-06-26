@@ -1,10 +1,15 @@
 return {
     "williamboman/mason.nvim",
     dependencies = {
+        "folke/neoconf.nvim",
         "williamboman/mason-lspconfig.nvim",
         "WhoIsSethDaniel/mason-tool-installer.nvim",
     },
     config = function()
+        local neoconf = require("neoconf")
+
+        neoconf.setup({})
+
         -- import mason
         local mason = require("mason")
 
@@ -38,7 +43,7 @@ return {
                 "prismals",
                 "pyright",
                 "eslint",
-                "rust_analyzer"
+                "rust_analyzer",
             },
         })
 
@@ -49,8 +54,8 @@ return {
                 "isort", -- python formatter
                 "black", -- python formatter
                 "pylint",
-                -- "eslint_d",
-                "js-debug-adapter"
+                "eslint_d",
+                "js-debug-adapter",
             },
         })
 
