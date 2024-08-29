@@ -8,12 +8,12 @@ return {
         catppuccin.setup({
             flavour = "mocha",
             integrations = {
-                
                 telescope = {
                     style = "nvchad",
                     enabled = true,
                 },
             },
+            transparent_background = true,
         })
 
         vim.cmd.colorscheme("catppuccin")

@@ -43,6 +43,7 @@ return {
                 "prismals",
                 "pyright",
                 "eslint",
+                "terraformls",
                 "rust_analyzer",
             },
         })
@@ -54,7 +55,6 @@ return {
                 "isort", -- python formatter
                 "black", -- python formatter
                 "pylint",
-                "eslint_d",
                 "js-debug-adapter",
             },
         })
