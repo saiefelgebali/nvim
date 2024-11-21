@@ -2,9 +2,9 @@ return {
     "neovim/nvim-lspconfig",
     event = { "BufReadPre", "BufNewFile" },
     dependencies = {
+        "williamboman/mason.nvim",
         "hrsh7th/cmp-nvim-lsp",
         { "antosha417/nvim-lsp-file-operations", config = true },
-        { "folke/neodev.nvim", opts = {} },
     },
     config = function()
         -- import lspconfig plugin
@@ -17,6 +17,21 @@ return {
         local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
         local keymap = vim.keymap -- for conciseness
+
+        -- recognize wgsl files
+        vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+            pattern = "*.wgsl",
+            callback = function()
+                vim.bo.filetype = "wgsl"
+            end,
+        })
+
+        vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+            pattern = "*.mdx",
+            callback = function()
+                vim.bo.filetype = "markdown.mdx"
+            end,
+        })
 
         vim.api.nvim_create_autocmd("LspAttach", {
             group = vim.api.nvim_create_augroup("UserLspConfig", {}),
@@ -84,27 +99,6 @@ return {
                     capabilities = capabilities,
                 })
             end,
-            -- ["rust_analyzer"] = function()
-            --     lspconfig["rust_analyzer"].setup({
-            --         procMacro = {
-            --             ignored = {
-            --                 leptos_macro = {
-            --                     "component",
-            --                     "server",
-            --                 },
-            --             },
-            --         },
-            --     })
-            -- end,
-            ["eslint"] = function()
-                lspconfig.eslint.setup {
-                    settings = {
-                        experimental = {
-                            useFlatConfig = true
-                        }
-                    }
-                }
-            end,
             ["svelte"] = function()
                 -- configure svelte server
                 lspconfig["svelte"].setup({
@@ -152,6 +146,21 @@ return {
                         },
                     },
                 })
+            end,
+            ["cssls"] = function()
+                lspconfig["cssls"].setup({
+                    settings = {
+                        css = {
+                            validate = true,
+                            lint = {
+                                unknownAtRules = "ignore",
+                            },
+                        },
+                    },
+                })
+            end,
+            ["mdx_analyzer"] = function()
+                lspconfig.mdx_analyzer.setup({})
             end,
         })
     end,

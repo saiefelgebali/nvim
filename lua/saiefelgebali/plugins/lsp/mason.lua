@@ -1,15 +1,11 @@
 return {
     "williamboman/mason.nvim",
     dependencies = {
-        "folke/neoconf.nvim",
+        "mfussenegger/nvim-lint",
         "williamboman/mason-lspconfig.nvim",
         "WhoIsSethDaniel/mason-tool-installer.nvim",
     },
     config = function()
-        local neoconf = require("neoconf")
-
-        neoconf.setup({})
-
         -- import mason
         local mason = require("mason")
 
@@ -32,7 +28,7 @@ return {
         mason_lspconfig.setup({
             -- list of servers for mason to install
             ensure_installed = {
-                "tsserver",
+                -- "ts_ls", This was slow for larger projects, using typescript-tools now
                 "html",
                 "cssls",
                 "tailwindcss",
@@ -42,7 +38,6 @@ return {
                 "emmet_ls",
                 "prismals",
                 "pyright",
-                "eslint",
                 "terraformls",
                 "rust_analyzer",
             },
@@ -56,6 +51,7 @@ return {
                 "black", -- python formatter
                 "pylint",
                 "js-debug-adapter",
+                "eslint_d",
             },
         })
 
