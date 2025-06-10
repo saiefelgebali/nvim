@@ -99,6 +99,11 @@ return {
                     capabilities = capabilities,
                 })
             end,
+            ["denols"] = function()
+                lspconfig["denols"].setup({
+                    enabled = false,
+                })
+            end,
             ["svelte"] = function()
                 -- configure svelte server
                 lspconfig["svelte"].setup({

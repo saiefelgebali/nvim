@@ -53,6 +53,8 @@ return {
                 "query",
                 "vimdoc",
                 "c",
+                "elixir",
+                "sql",
             },
             incremental_selection = {
                 enable = true,

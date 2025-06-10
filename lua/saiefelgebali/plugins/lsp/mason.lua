@@ -40,6 +40,7 @@ return {
                 "pyright",
                 "terraformls",
                 "rust_analyzer",
+                "denols",
             },
         })
 
