@@ -62,8 +62,7 @@ return {
                         col = "50%",
                     },
                     border = {
-                        style = "none",
-                        padding = { 1, 3 },
+                        padding = { 0, 1 },
                     },
                     filter_options = {},
                     win_options = {
