@@ -9,7 +9,6 @@ return {
             flavour = "macchiato",
             integrations = {
                 telescope = {
-                    style = "nvchad",
                     enabled = true,
                 },
             },

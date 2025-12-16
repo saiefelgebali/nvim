@@ -17,7 +17,7 @@ require("lazy").setup({
     { import = "saiefelgebali.plugins.dap" },
 }, {
     checker = {
-        enabled = true,
+        enabled = false,
         notify = false,
     },
     change_detection = {

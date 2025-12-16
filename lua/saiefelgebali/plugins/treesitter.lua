@@ -52,6 +52,7 @@ return {
                 "gitignore",
                 "query",
                 "vimdoc",
+                "terraform",
                 "c",
                 "elixir",
                 "sql",
