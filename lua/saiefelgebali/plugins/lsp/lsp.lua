@@ -35,7 +35,7 @@ return {
     config = function()
         local servers = {
             kotlin_ls = {
-                cmd = { "kotlin-ls", "--stdio" },
+                cmd = { "kotlin-lsp", "--stdio" },
                 single_file_support = true,
                 filetypes = { "kotlin" },
                 root_markers = { "build.gradle", "build.gradle.kts", "pom.xml" },
@@ -89,6 +89,9 @@ return {
                     "svelte",
                 },
             },
+            rust_analyzer = {},
+            terraformls = {},
+            html = {},
         }
 
         for name, config in pairs(servers) do
