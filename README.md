@@ -8,9 +8,9 @@ For example: <TAB> shouldn't insert a tab in some cases, but complete a snippet 
 
 ## Gotchas
 
-### Neovim does not register <C-Space>
+### Neovim does not register `<C-Space>`
 
-On macOS, <C-Space> is tricky because it’s commonly captured by macOS for input-source switching, and even when it gets through, terminals often deliver it to apps as NUL (^@), which Neovim treats as <C-@> / <Nul>.
+On macOS, `<C-Space>` is tricky because it’s commonly captured by macOS for input-source switching, and even when it gets through, terminals often deliver it to apps as NUL `(^@)`, which Neovim treats as `<C-@>` / `<Nul>`.
 
 #### How to fix
 
