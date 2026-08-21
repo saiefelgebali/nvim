@@ -33,6 +33,8 @@ return {
         },
     },
     config = function()
+        local util = require("lspconfig.util")
+
         local servers = {
             kotlin_ls = {
                 cmd = { "kotlin-lsp", "--stdio" },
@@ -92,6 +94,18 @@ return {
             rust_analyzer = {},
             terraformls = {},
             html = {},
+            astro = {},
+            mdx_analyzer = {},
+            tailwindcss = {},
+            pyright = {
+                settings = {
+                    python = {
+                        venvPath = ".venv",
+                        pythonPath = ".venv/bin/python",
+                    }
+                }
+            },
+            hls = {},
             dartls = {
                 cmd = { 'fvm', 'dart', 'language-server', '--protocol=lsp' },
                 filetypes = { 'dart' },
